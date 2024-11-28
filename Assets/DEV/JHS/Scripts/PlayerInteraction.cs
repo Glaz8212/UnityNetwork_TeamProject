@@ -19,7 +19,7 @@ public class PlayerInteraction : MonoBehaviour
     // 콜라이더 충돌 판정
     private bool isCollider = false;
 
-    public MissionController missionController;
+    public MissionBoxController missionController;
     public BoxController boxController;
     public Item item;
     public PlayerInventory playerInventory;
@@ -50,7 +50,7 @@ public class PlayerInteraction : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogWarning("MissionController가 설정되지 않았습니다.");
+                        Debug.LogWarning("MissionBoxController 설정되지 않았습니다.");
                     }
                     break;
                 case Type.ItemBox:
@@ -93,7 +93,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.CompareTag("Mission1") || other.CompareTag("Mission2") || other.CompareTag("Ending"))
         {
-            missionController = other.GetComponent<MissionController>();
+            missionController = other.GetComponent<MissionBoxController>();
             if (missionController != null)
             {
                 type = Type.Misson;
@@ -126,7 +126,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<MissionController>() == missionController)
+        if (other.GetComponent<MissionBoxController>() == missionController)
         {
             missionController = null;
         }

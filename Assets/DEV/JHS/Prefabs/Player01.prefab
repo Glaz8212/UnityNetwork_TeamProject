@@ -10371,7 +10371,7 @@ MonoBehaviour:
   hunger: 0
   warmthMax: 500
   warmth: 0
-  animator: {fileID: 0}
+  animator: {fileID: 4348890797106946645}
   playerDie: 0
   ishungry: 0
   iscold: 0
